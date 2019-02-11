@@ -1,1 +1,28 @@
-/* All styles for your Card Components live here */
+.card-container {
+  margin-left: 4rem;
+  padding: 0 0.3rem;
+}
+.card-container a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.card-banner {
+  height: 16rem;
+  background: url('https://tk-assets.lambdaschool.com/fcd75197-7d12-46ec-bc9e-4130f34822fa_reactbackground.png')
+    center / 140%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.card-content {
+  padding: 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  border: 1px solid #ccc;
+}
+.card-content-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.card-content-link {
+  color: grey;
+  margin-top: 0.5rem;
+}
