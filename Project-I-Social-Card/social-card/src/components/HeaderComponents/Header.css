@@ -1,1 +1,31 @@
-/* All styles for your header Components live here */
+.header-container {
+  position: relative;
+}
+
+.header-thumbnail {
+  width: 4rem;
+  padding: 0.3rem;
+  position: absolute;
+}
+.header-thumbnail img {
+  width: 100%;
+}
+
+.header-main {
+  margin-left: 4rem;
+  padding: 0 0.3rem 1rem;
+}
+.header-title {
+  line-height: 2rem;
+}
+.header-name {
+  font-weight: bold;
+}
+.header-handle,
+.header-timestamp {
+  color: grey;
+  padding-left: 0.5rem;
+}
+.header-timestamp::before {
+  content: '· ';
+}
