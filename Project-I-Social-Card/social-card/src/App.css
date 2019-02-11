@@ -4,9 +4,9 @@
 */
 
 .social-card * {
-  /* background: rgba(255, 0, 0, 0.1); */
   box-sizing: border-box;
 }
 .social-card {
+  line-height: 1.3;
   width: 40rem;
 }
