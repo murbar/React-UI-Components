@@ -20,7 +20,7 @@ const App = () => {
           in order to make them work.
         </strong>
       </p>
-      <div className="socialCard">
+      <div className="social-card">
         <HeaderContainer />
         <CardContainer />
       </div>
