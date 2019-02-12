@@ -27,9 +27,9 @@ export default class App extends React.Component {
     this.setState({ display: 0, operands: [0, 0], operator: null });
   }
 
-  handleOperatorPress(e, operator) {
-    if (this.state.result === 0) return;
-    this.setState(state => ({ operand: state.result, operator: operator }));
+  handleOperatorPress(operator) {
+    if (this.isClearedState()) return;
+    this.setState({ operator });
   }
 
   handleEqualsPress(e) {
