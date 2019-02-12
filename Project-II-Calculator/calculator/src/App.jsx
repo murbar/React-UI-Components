@@ -15,9 +15,14 @@ export default class App extends React.Component {
     this.handleEqualsPress = this.handleEqualsPress.bind(this);
   }
 
-  handleNumberPress(e, value) {
-    if (this.state.result === 0) {
-      this.setState({ result: value });
+  isClearedState() {
+    return this.state.operands[0] === 0 && this.state.operands[1] === 0;
+  }
+
+  handleNumberPress(value) {
+    if (this.isClearedState()) {
+      const operands = [parseInt(value), 0];
+      this.setState({ display: value, operands });
       return;
     }
     this.setState(state => ({ result: state.result + value }));
