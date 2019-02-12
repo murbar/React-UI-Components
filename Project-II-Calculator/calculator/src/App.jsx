@@ -25,30 +25,30 @@ export default class App extends React.Component {
       <div className="calculator-container">
         <CalculatorDisplay result={this.state.result} />
         <ButtonRow>
-          <ActionButton text="clear" buttonStyle="button-clear" />
-          <ActionButton text="÷" buttonStyle="button-action" />
+          <ActionButton value="clear" buttonStyle="button-clear" onPress={this.handleNumberPress} />
+          <ActionButton value="÷" buttonStyle="button-action" />
         </ButtonRow>
         <ButtonRow>
-          <NumberButton text="7" buttonStyle="button-number" />
-          <NumberButton text="8" buttonStyle="button-number" />
-          <NumberButton text="9" buttonStyle="button-number" />
-          <ActionButton text="×" buttonStyle="button-action" />
+          <NumberButton value="7" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <NumberButton value="8" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <NumberButton value="9" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <ActionButton value="×" buttonStyle="button-action" onPress={this.handleNumberPress} />
         </ButtonRow>
         <ButtonRow>
-          <NumberButton text="4" buttonStyle="button-number" />
-          <NumberButton text="5" buttonStyle="button-number" />
-          <NumberButton text="6" buttonStyle="button-number" />
-          <ActionButton text="–" buttonStyle="button-action" />
+          <NumberButton value="4" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <NumberButton value="5" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <NumberButton value="6" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <ActionButton value="–" buttonStyle="button-action" />
         </ButtonRow>
         <ButtonRow>
-          <NumberButton text="1" buttonStyle="button-number" />
-          <NumberButton text="2" buttonStyle="button-number" />
-          <NumberButton text="3" buttonStyle="button-number" />
-          <ActionButton text="+" buttonStyle="button-action" />
+          <NumberButton value="1" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <NumberButton value="2" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <NumberButton value="3" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          <ActionButton value="+" buttonStyle="button-action" />
         </ButtonRow>
         <ButtonRow>
-          <NumberButton text="0" buttonStyle="button-zero" />
-          <ActionButton text="=" buttonStyle="button-action" />
+          <NumberButton value="0" buttonStyle="button-zero" onPress={this.handleNumberPress} />
+          <ActionButton value="=" buttonStyle="button-action" />
         </ButtonRow>
       </div>
     );
