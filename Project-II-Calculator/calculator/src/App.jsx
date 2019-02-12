@@ -10,6 +10,7 @@ export default class App extends React.Component {
     super(props);
     this.state = { result: 0 };
     this.handleNumberPress = this.handleNumberPress.bind(this);
+    this.handleClearPress = this.handleClearPress.bind(this);
   }
 
   handleNumberPress(e, value) {
@@ -20,12 +21,16 @@ export default class App extends React.Component {
     this.setState(state => ({ result: state.result + value }));
   }
 
+  handleClearPress(e, value) {
+    this.setState({ result: 0 });
+  }
+
   render() {
     return (
       <div className="calculator-container">
         <CalculatorDisplay result={this.state.result} />
         <ButtonRow>
-          <ActionButton value="clear" buttonStyle="button-clear" onPress={this.handleNumberPress} />
+          <ActionButton value="clear" buttonStyle="button-clear" onPress={this.handleClearPress} />
           <ActionButton value="÷" buttonStyle="button-action" />
         </ButtonRow>
         <ButtonRow>
