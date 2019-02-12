@@ -11,6 +11,15 @@ export default class App extends React.Component {
     this.state = { result: 0 };
     this.handleNumberPress = this.handleNumberPress.bind(this);
   }
+
+  handleNumberPress(e, value) {
+    if (this.state.result === 0) {
+      this.setState({ result: value });
+      return;
+    }
+    this.setState(state => ({ result: state.result + value }));
+  }
+
   render() {
     return (
       <div className="calculator-container">
