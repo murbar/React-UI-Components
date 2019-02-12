@@ -6,6 +6,11 @@ import NumberButton from './components/ButtonComponents/NumberButton';
 import ActionButton from './components/ButtonComponents/ActionButton';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { result: 0 };
+    this.handleNumberPress = this.handleNumberPress.bind(this);
+  }
   render() {
     return (
       <div className="calculator-container">
