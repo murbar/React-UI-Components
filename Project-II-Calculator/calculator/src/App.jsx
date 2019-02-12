@@ -23,8 +23,8 @@ export default class App extends React.Component {
     this.setState(state => ({ result: state.result + value }));
   }
 
-  handleClearPress(e, value) {
-    this.setState({ result: 0 });
+  handleClearPress() {
+    this.setState({ display: 0, operands: [0, 0], operator: null });
   }
 
   handleOperatorPress(e, operator) {
