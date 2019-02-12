@@ -37,9 +37,15 @@ export default class App extends React.Component {
     this.setState({ operator });
   }
 
-  handleEqualsPress(e) {
-    if (this.state.result === 0) return;
-    // display result
+  handleEqualsPress() {
+    if (!this.state.operator) return;
+    const { operands } = this.state;
+    console.log(operands);
+    const result = eval(`${parseInt(operands[0])} ${this.state.operator} ${parseInt(operands[1])}`);
+    this.setState({
+      display: result,
+      operands: [0, 0]
+    });
   }
 
   render() {
