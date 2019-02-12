@@ -8,7 +8,7 @@ import ActionButton from './components/ButtonComponents/ActionButton';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { result: 0, operand: '', operator: '' };
+    this.state = { display: 0, operands: [0, 0], operator: null };
     this.handleNumberPress = this.handleNumberPress.bind(this);
     this.handleClearPress = this.handleClearPress.bind(this);
     this.handleOperatorPress = this.handleOperatorPress.bind(this);
