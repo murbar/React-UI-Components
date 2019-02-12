@@ -40,7 +40,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="calculator-container">
-        <CalculatorDisplay result={this.state.result} />
+        <CalculatorDisplay result={this.state.display} />
         <ButtonRow>
           <ActionButton
             value="c"
