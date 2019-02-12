@@ -2,7 +2,11 @@ import React from 'react';
 import './Button.css';
 
 function ActionButton(props) {
-  return <button className={props.buttonStyle}>{props.text}</button>;
+  return (
+    <button onClick={props.onPress} className={props.buttonStyle}>
+      {props.value}
+    </button>
+  );
 }
 
 export default ActionButton;
