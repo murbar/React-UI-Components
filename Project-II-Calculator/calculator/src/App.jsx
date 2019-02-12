@@ -23,7 +23,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="calculator-container">
-        <CalculatorDisplay result={0} />
+        <CalculatorDisplay result={this.state.result} />
         <ButtonRow>
           <ActionButton text="clear" buttonStyle="button-clear" />
           <ActionButton text="÷" buttonStyle="button-action" />
