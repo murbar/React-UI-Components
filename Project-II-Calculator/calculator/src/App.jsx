@@ -25,22 +25,18 @@ export default class App extends React.Component {
       this.setState({ display: value, operands });
       return;
     }
-    if (!this.state.operator) {
-      const operands = this.state.operands;
-      const isZero = parseInt(operands[0]) === 0;
 
-      isZero ? (operands[0] = value) : (operands[0] += value);
+    const operands = this.state.operands;
+    const operandIndex = this.state.operator ? 1 : 0;
+    const operatorIsZero = parseInt(operands[operandIndex]) === 0;
 
-      this.setState(state => ({ display: operands[0], operands }));
+    if (operatorIsZero) {
+      operands[operandIndex] = value;
+    } else {
+      operands[operandIndex] += value;
     }
-    if (this.state.operator) {
-      const operands = this.state.operands;
-      const isZero = parseInt(operands[1]) === 0;
 
-      isZero ? (operands[1] = value) : (operands[1] += value);
-
-      this.setState(state => ({ display: operands[1], operands }));
-    }
+    this.setState({ display: operands[operandIndex], operands });
   }
 
   handleClearPress() {
