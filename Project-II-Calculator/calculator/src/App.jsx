@@ -9,17 +9,13 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { display: 0, operands: [0, 0], operator: null };
-    this.handleNumberPress = this.handleNumberPress.bind(this);
-    this.handleClearPress = this.handleClearPress.bind(this);
-    this.handleOperatorPress = this.handleOperatorPress.bind(this);
-    this.handleEqualsPress = this.handleEqualsPress.bind(this);
   }
 
-  isClearedState() {
+  isClearedState = () => {
     return this.state.operands[0] === 0 && this.state.operands[1] === 0;
-  }
+  };
 
-  handleNumberPress(value) {
+  handleNumberPress = value => {
     if (this.isClearedState()) {
       const operands = [parseInt(value), 0];
       this.setState({ display: value, operands });
@@ -37,19 +33,19 @@ export default class App extends React.Component {
     }
 
     this.setState({ display: operands[operandIndex], operands });
-  }
+  };
 
-  handleClearPress() {
+  handleClearPress = () => {
     this.setState({ display: 0, operands: [0, 0], operator: null });
-  }
+  };
 
-  handleOperatorPress(operator) {
+  handleOperatorPress = operator => {
     if (this.isClearedState()) return;
 
     this.setState({ operator });
-  }
+  };
 
-  handleEqualsPress() {
+  handleEqualsPress = () => {
     if (!this.state.operator) return;
 
     const { operands } = this.state;
@@ -61,7 +57,7 @@ export default class App extends React.Component {
     if (result.length > maxLength) result = result.substring(0, maxLength);
 
     this.setState({ display: result, operands: [0, 0] });
-  }
+  };
 
   render() {
     const makeNumButton = num => {
