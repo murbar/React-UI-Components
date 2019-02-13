@@ -17,14 +17,14 @@ export default class App extends React.Component {
 
   handleNumberPress = value => {
     if (this.isClearedState()) {
-      const operands = [parseInt(value), 0];
+      const operands = [parseInt(value, 10), 0];
       this.setState({ display: value, operands });
       return;
     }
 
     const operands = this.state.operands;
     const operandIndex = this.state.operator ? 1 : 0;
-    const operandIsZero = parseInt(operands[operandIndex]) === 0;
+    const operandIsZero = parseInt(operands[operandIndex], 10) === 0;
 
     if (operandIsZero) {
       operands[operandIndex] = value;
@@ -50,7 +50,7 @@ export default class App extends React.Component {
 
     const { operands } = this.state;
     const maxLength = 12;
-    const [o1, o2] = operands.map(o => parseInt(o));
+    const [o1, o2] = operands.map(o => parseInt(o, 10));
 
     let result = eval(`${o1} ${this.state.operator} ${o2}`).toString();
 
