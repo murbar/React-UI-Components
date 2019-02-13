@@ -64,6 +64,17 @@ export default class App extends React.Component {
   }
 
   render() {
+    const makeNumButton = num => {
+      return (
+        <NumberButton
+          key={num}
+          value={num}
+          buttonStyle="button-number"
+          onPress={this.handleNumberPress}
+        />
+      );
+    };
+
     return (
       <div className="calculator-container">
         <CalculatorDisplay result={this.state.display} />
@@ -82,9 +93,7 @@ export default class App extends React.Component {
           />
         </ButtonRow>
         <ButtonRow>
-          <NumberButton value="7" buttonStyle="button-number" onPress={this.handleNumberPress} />
-          <NumberButton value="8" buttonStyle="button-number" onPress={this.handleNumberPress} />
-          <NumberButton value="9" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          {[7, 8, 9].map(n => makeNumButton(n))}
           <ActionButton
             value="*"
             display="×"
@@ -93,9 +102,7 @@ export default class App extends React.Component {
           />
         </ButtonRow>
         <ButtonRow>
-          <NumberButton value="4" buttonStyle="button-number" onPress={this.handleNumberPress} />
-          <NumberButton value="5" buttonStyle="button-number" onPress={this.handleNumberPress} />
-          <NumberButton value="6" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          {[4, 5, 6].map(n => makeNumButton(n))}
           <ActionButton
             value="-"
             display="–"
@@ -104,9 +111,7 @@ export default class App extends React.Component {
           />
         </ButtonRow>
         <ButtonRow>
-          <NumberButton value="1" buttonStyle="button-number" onPress={this.handleNumberPress} />
-          <NumberButton value="2" buttonStyle="button-number" onPress={this.handleNumberPress} />
-          <NumberButton value="3" buttonStyle="button-number" onPress={this.handleNumberPress} />
+          {[1, 2, 3].map(n => makeNumButton(n))}
           <ActionButton
             value="+"
             display="+"
