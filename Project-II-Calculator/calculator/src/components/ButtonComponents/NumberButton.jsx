@@ -1,10 +1,10 @@
 import React from 'react';
 import './Button.css';
 
-function NumberButton(props) {
+function NumberButton({ value, buttonStyle, onPress }) {
   return (
-    <button onClick={() => props.onPress(props.value)} className={props.buttonStyle}>
-      {props.value}
+    <button onClick={() => onPress(value)} className={buttonStyle}>
+      {value}
     </button>
   );
 }

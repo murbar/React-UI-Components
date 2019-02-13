@@ -1,10 +1,10 @@
 import React from 'react';
 import './Button.css';
 
-function ActionButton(props) {
+function ActionButton({ value, display, buttonStyle, onPress }) {
   return (
-    <button onClick={() => props.onPress(props.value)} className={props.buttonStyle}>
-      {props.display}
+    <button onClick={() => onPress(value)} className={buttonStyle}>
+      {display}
     </button>
   );
 }
