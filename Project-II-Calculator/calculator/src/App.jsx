@@ -24,9 +24,9 @@ export default class App extends React.Component {
 
     const operands = this.state.operands;
     const operandIndex = this.state.operator ? 1 : 0;
-    const operatorIsZero = parseInt(operands[operandIndex]) === 0;
+    const operandIsZero = parseInt(operands[operandIndex]) === 0;
 
-    if (operatorIsZero) {
+    if (operandIsZero) {
       operands[operandIndex] = value;
     } else {
       operands[operandIndex] += value;
