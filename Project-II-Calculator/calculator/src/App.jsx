@@ -45,21 +45,22 @@ export default class App extends React.Component {
 
   handleOperatorPress(operator) {
     if (this.isClearedState()) return;
+
     this.setState({ operator });
   }
 
   handleEqualsPress() {
     if (!this.state.operator) return;
+
     const { operands } = this.state;
-    let result = eval(
-      `${parseInt(operands[0])} ${this.state.operator} ${parseInt(operands[1])}`
-    ).toString();
     const maxLength = 12;
+    const [o1, o2] = operands.map(o => parseInt(o));
+
+    let result = eval(`${o1} ${this.state.operator} ${o2}`).toString();
+
     if (result.length > maxLength) result = result.substring(0, maxLength);
-    this.setState({
-      display: result,
-      operands: [0, 0]
-    });
+
+    this.setState({ display: result, operands: [0, 0] });
   }
 
   render() {
