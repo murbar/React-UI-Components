@@ -1,0 +1,13 @@
+.footer-container {
+  margin-left: 4rem;
+  padding: 1rem 0.3rem;
+  display: flex;
+}
+.footer-container > div {
+  display: flex;
+  align-items: center;
+  width: 5rem;
+}
+.footer-container .count {
+  padding-left: 0.5rem;
+}

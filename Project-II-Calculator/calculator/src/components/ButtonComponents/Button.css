@@ -1,0 +1,53 @@
+.calculator-button-row {
+  display: flex;
+  border-bottom: 1px solid #444;
+}
+
+.calculator-button-row:last-child {
+  border: none;
+}
+
+button {
+  display: block;
+  width: 25%;
+  border: none;
+  border-right: 1px solid #444;
+  height: 4rem;
+  font-size: 1.75rem;
+  background: #efefef;
+}
+
+button:hover {
+  background: white;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:not(.button-clear):not(.button-action) {
+  font-weight: bold;
+}
+
+button:last-child {
+  border: none;
+}
+
+button.button-clear {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+button.button-clear,
+button.button-zero {
+  width: 75%;
+}
+
+button.button-action {
+  background: #0b5563;
+  color: white;
+}
+
+button.button-action:hover {
+  background: #0e6b7c;
+}
